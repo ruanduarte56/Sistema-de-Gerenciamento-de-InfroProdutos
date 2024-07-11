@@ -10,9 +10,9 @@
 #1 crie um arquivo .env
 #2 Copiar os dados do .env.example dentro dele
 #3 Criar uma Database no mysql e fazer as seguintes trocas
-# DB_DATABASE='nome database'
-# DB_USERNAME='nome username'
-# DB_PASSWORD='seu password'
+<p> #DB_DATABASE='nome database' </p>
+<p> #DB_USERNAME='nome username' </p>
+<p>#DB_PASSWORD='seu password' </p>
 #4 após isso basta fazer os seguintes comandos
 #4.1 PHP artisan migate 
 <p> #4.2 PHP artisan seed <span style='color:red;'>isso ira gerar alguns dados fakes para tesete no seu mysql</span> </p>
