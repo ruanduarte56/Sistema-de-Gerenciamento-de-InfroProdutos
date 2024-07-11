@@ -1,0 +1,128 @@
+*{
+list-style: none;
+margin: 0;
+padding: 0;
+text-decoration: none;
+box-sizing: border-box !important;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        'header header header'
+        'aside main aside2'
+        'footer footer footer';
+    grid-template-columns: 280px auto 100px;
+    grid-template-rows: 56px auto 40px;
+    min-height: 100vh;
+    height: 150vh;
+    margin: 0;
+}
+header {
+    grid-area: header;
+}
+aside:first-of-type {
+    grid-area: aside;
+    background-color: #e8e8e8;
+    padding-top: 0px;
+}
+main {
+    grid-area: main;
+    background-color: #ffffff;
+    padding: 60px 40px;
+}
+aside:last-of-type {
+    grid-area: aside2;
+    background-color: #e8e8e8;
+    padding: 1rem;
+}
+footer {
+    grid-area: footer;
+    background-color: #d8d8d8;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#aside-ul,#aside-ul-mobile{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px 1fr;
+    margin-top: 0;
+}
+
+.collapsible-body{
+    padding: 0.8rem !important;
+}
+
+#search{
+    height: 47px;
+    width: 47px;
+    border-top:  0.1px solid rgb(12, 12, 12, 0.5) !important;
+    border-bottom:  0.1px solid rgb(12, 12, 12, 0.5) !important;
+    border-left: none;
+    border-right: 0.1px solid rgb(12, 12, 12, 0.5) !important;;
+    background:none;
+}
+
+.titulo-rota{
+    margin: 0 !important;
+}
+
+@media screen and (max-width:768px) {
+    body {
+        display: grid;
+        grid-template-areas: 
+            'header'
+            'aside'
+            'main'
+            'aside2'
+            'footer';
+        grid-template-columns: 100%;
+        grid-template-rows: 50px repeat(4,auto);
+        height: 100vh;
+        margin: 0;
+    }
+
+    header{
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .titulo-rota{
+        display: block;
+        text-align: center;
+        
+    }
+
+    main{
+        padding: 30px 40px;
+    }
+
+    #mobile-navbar{
+        background-color: #e8e8e8;
+        z-index: 1000;
+    }
+
+    #aside-ul{
+        display: none;
+    }
+    
+
+    footer{
+        flex-direction: column;
+    }
+    #search{
+        height: 44px;
+    }
+}
+
+@media screen and(min-width:768px) {
+    .hide-768{
+        display: none !important;
+    }
+}

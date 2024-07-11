@@ -1,0 +1,47 @@
+h1{
+    text-align: center;
+}
+
+input{
+    padding: 7px;
+    margin-bottom: 20px;
+}
+
+button{
+    background: rgb(48, 211, 48);
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: auto;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#respostas{
+    text-align: center; color:white; background:red; margin-bottom:0px;
+}
+
+body{
+    display: flex; align-items:center; height:100vh;
+}
+
+form{
+    margin:auto; 
+    width:300px; 
+    display:grid; 
+    grid-template-columns:1fr;
+    grid-auto-rows:auto; 
+    align-items:center;
+    justify-content:center;
+    padding:10px;
+}
+
+#respostas{
+    text-align: center;
+    background-color: red;
+}
+

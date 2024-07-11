@@ -1,0 +1,59 @@
+.titulo-mercado {
+    display: inline;
+    padding: 0 0 0 10px;
+}
+
+.form-pesquisa {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 0.75rem;
+}
+
+.input-pesquisa {
+    margin: 0 !important;
+    border: 0.1px solid rgba(12, 12, 12, 0.5) !important;
+    padding-left: 10px !important;
+    
+}
+
+.produtos-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card-content .avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#container_mesagem_meus_produtos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+#criar_produto{
+    background-color:chocolate; 
+    display: inline;
+    width:100px; height:50px;
+    border-radius: 10px;
+}
+
+#criar_produto>a{
+    color:white; font-size:2em
+}
+
+@media screen and (max-width:768px) {
+    #container_mesagem_meus_produtos>h3{
+       font-size:2.5em !important;
+       text-align: center;
+    }
+    
+}

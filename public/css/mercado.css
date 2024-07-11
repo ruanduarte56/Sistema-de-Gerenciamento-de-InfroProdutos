@@ -1,0 +1,88 @@
+.titulo-mercado {
+    display: inline;
+    padding: 0 0 0 10px;
+}
+
+.form-pesquisa {
+    display: grid;
+    grid-template-columns: auto 47px;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 0.75rem;
+}
+
+input{
+    margin: 0 !important;
+    border: 0.1px solid rgba(12, 12, 12, 0.5) !important;
+    padding-left: 10px !important;
+    
+}
+
+#search{
+    justify-self: end;
+    height: 45px;
+}
+
+#btn-filtro{
+    grid-column: 2/3;
+    width: 100%;
+    margin-top: 15px;
+    background: none;
+    border: none;
+    justify-self: center;
+}
+
+#filtros{
+    display: flex;
+    gap: 20px;
+}
+
+.produtos-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card-content .avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.select-wrapper{
+    margin-top: 3px;
+}
+
+.select-wrapper+label{
+    left:0 !important;
+}
+
+@media screen and (max-width:768px) {
+
+  
+
+    #filtros{
+        flex-direction: column;
+        grid-column: 1/-1;
+    }
+
+    
+.select-wrapper input.select-dropdown{
+    max-width: calc(100% - 10px);
+
+}
+
+#btn-filtro{
+    width:40px;
+    padding-left: 10px;
+}
+
+#search{
+    height: 42px;
+}
+
+#btn-filtro{
+    padding-right: 7px;
+}
+
+
+}
