@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('carteira', function (Blueprint $table) {
+        Schema::create('carteiras', function (Blueprint $table) {
             $table->id('transaction_id');
             $table->unsignedBigInteger('i_usuario');
             $table->foreign('i_usuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

@@ -14,7 +14,7 @@
     <header>
          <!-- Dropdown Structure Perfil -->
          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="{{route('users.show', auth()->user()->id)}}">Ver pefil</a></li>
+            <li><a href="{{route('users.show', auth()->user()->name)}}">Ver pefil</a></li>
             <li><a href="{{route('logout')}}">Logout</a></li>
           </ul>
          <!-- Dropdown Structure Menu mobile -->

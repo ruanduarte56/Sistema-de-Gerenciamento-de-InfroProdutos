@@ -10,8 +10,8 @@
         <form action="{{route('users.update',auth()->user()->id)}}" style="display: flex; gap:10px; flex-direction:column;" method="POST">
             @method('PUT')
             @csrf
-            <div style="display: flex;"><p class="paragrafo">nome: {{$user->name}}</p> <input  class="input" name="nome" value="{{$user->name}}" id="input-nome" style="display: none" type="text"> <button type="button" class="btn-edit" style="border: none; background:none;"><i class="material-icons">edit</i></button> <button class="btn-check" type="submit" style="display:none; border: none; background:none;"><i class="material-icons">check</i></button></div>
-            <div style="display: flex;"><p class="paragrafo">nome: {{$user->email}}</p> <input class="input"  name="email" value="{{$user->email}}" id="input-email" style="display: none" type="text"> <button type="button" class="btn-edit" style="border: none; background:none;"><i class="material-icons">edit</i></button> <button class="btn-check" type="submit" style="display:none; border: none; background:none;"><i class="material-icons">check</i></button></div>
+            <div style="display: flex;"><p class="paragrafo">nome: {{$user->name}}</p> <input  class="input" name="name" value="{{$user->name}}" id="input-nome" style="display: none" type="text"> <button type="button" class="btn-edit" style="border: none; background:none;"><i class="material-icons">edit</i></button> <button class="btn-check" type="submit" style="display:none; border: none; background:none;"><i class="material-icons">check</i></button></div>
+            <div style="display: flex;"><p class="paragrafo">email: {{$user->email}}</p> <input class="input"  name="email" value="{{$user->email}}" id="input-email" style="display: none" type="text"> <button type="button" class="btn-edit" style="border: none; background:none;"><i class="material-icons">edit</i></button> <button class="btn-check" type="submit" style="display:none; border: none; background:none;"><i class="material-icons">check</i></button></div>
         </form>
     </div>
 </div>
@@ -36,7 +36,7 @@
 
     btns_edits.forEach((btn, i) => {
         btn.addEventListener("click", (evt) => {
-            evt.target.parentNode.style.display = 'none';
+            btn.style.display = 'none';
             inputs[i].style.display = 'block';
             inputs[i].focus();
             paragrafos[i].style.display='none'
@@ -44,14 +44,15 @@
         });
     });
 
-    inputs.forEach((input,i) => {
-        input.addEventListener('blur',()=>{
-            console.log('teste');
-            btns_edits[i].style.display='block'
-            paragrafos[i].style.display='block'
-            btns_check[i].style.display = 'none';
-            input.style.display='none';
-        })
+    inputs.forEach((input, i) => {
+        input.addEventListener('blur', () => {
+            setTimeout(() => {
+                btns_edits[i].style.display = 'block';
+                paragrafos[i].style.display = 'block';
+                btns_check[i].style.display = 'none';
+                input.style.display = 'none';
+            }, 100);
+        });
     });
 </script>
 @endpush

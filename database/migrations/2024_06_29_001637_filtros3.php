@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('filtros', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('i_produto');
             //$table->foreign('i_produto')->references('id')->on('produtos')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('nicho');
-            $table->string('formato_produto');
-            $table->string('idioma');
-            $table->string('moeda');
+            $table->enum('nicho',['saude física', 'saude mental','outro','lazer','educacao']);
+            $table->enum('formato_produto',['digital','sowftare','físico']);
+            $table->enum('idioma',['pt-br','eng','fr']);
+            $table->enum('moeda',['real','euro','dolar']);
             $table->boolean('afiliados');
             $table->string('tipo_comissao')->default(0);
             $table->boolean('hotlink_alternativos')->default(0);

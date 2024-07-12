@@ -39,9 +39,28 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('dentroCasa.produtos.criar');
+        $nicho_valores = $this->getEnumValues('filtros', 'nicho');
+        $formato_valores = $this->getEnumValues('filtros', 'formato_produto');
+        $idioma_valores = $this->getEnumValues('filtros', 'idioma');
+        $moeda_valores = $this->getEnumValues('filtros', 'moeda');
+
+    return view('dentroCasa.produtos.criar', compact('nicho_valores', 'formato_valores', 'idioma_valores', 'moeda_valores'));
+       
     }
 
+    private function getEnumValues($table, $column)
+{
+    $result = DB::select("SHOW COLUMNS FROM {$table} WHERE Field = ?", [$column]);
+    $type = $result[0]->Type;
+    preg_match('/^enum\((.*)\)$/', $type, $matches);
+    $enumValues = [];
+    if (!empty($matches)) {
+        $enumValues = array_map(function($value) {
+            return trim($value, "'");
+        }, explode(',', $matches[1]));
+    }
+    return $enumValues;
+}
     /**
      * Store a newly created resource in storage.
      */
@@ -56,10 +75,10 @@ class ProdutosController extends Controller
                 'nome' => 'required|string|min:7|max:255',
                 'descricao' => 'required|string|min:100',
                 'preco' => 'required|numeric|min:20|max:10000',
-                'nicho' => 'required|string|in:saúde física,saúde mental,outro',
-                'formato_produto' => 'required|string|in:curso digital,ebook digital,software',
-                'idioma' => 'required|string|in:pt-br,en',
-                'moeda' => 'required|string',
+                'nicho' => 'required|string|in:saude física, saude mental,outro,lazer,educacao',
+                'formato_produto' => 'required|string|in:digital,físico,sowftare',
+                'idioma' => 'required|string|in:pt-br,eng,fr',
+                'moeda' => 'required|string|in:real,dolar,euro',
                 'afiliados' => 'required|boolean',
                 'porcetagem_afiliacao' => 'required_if:afiliados,1|numeric|min:0.2|max:0.7',
                 'tipo-comissao' => 'required_if:afiliados,1|string',
@@ -185,10 +204,10 @@ class ProdutosController extends Controller
             'nome' => 'required|string|min:7|max:255',
             'descricao' => 'required|string|min:100',
             'preco' => 'required|numeric|min:20|max:10000',
-            'nicho' => 'required|string|in:saúde física,saúde mental',
-            'formato_produto' => 'required|string|in:curso digital,ebook digital,software',
-            'idioma' => 'required|string|in:pt-br,en',
-            'moeda' => 'required|string|in:real',
+            'nicho' => 'required|string|in:saude física, saude mental,outro,lazer,educacao',
+            'formato_produto' => 'required|string|in:digital,físico,sowftare',
+            'idioma' => 'required|string|in:pt-br,eng,fr',
+            'moeda' => 'required|string|in:real,dolar,euro',
             'afiliados' => 'required|boolean',
             'porcetagem_afiliacao' => 'required_if:afiliados,1|numeric|min:0.2|max:0.7',
             'tipo-comissao' => 'required_if:afiliados,1|string',

@@ -11,7 +11,7 @@
 @section('conteudo')
 <div style="width: 100%; display:flex; flex-direction:column; gap:10px;">
 <div class="produto-container">
-    <img class="produto-imagem" src="{{url("storage/{$produto->imagem}")}}" alt="{{$produto->nome}}">
+    <img class="produto-imagem" src="{{$produto->imagem}}" alt="{{$produto->nome}}">
     <div class="produto-info">
         <h1 class="produto-nome">{{$produto->nome}}</h1>
         <p>Preço: <span class="produto-preco">{{$produto->preco}}</span></p>

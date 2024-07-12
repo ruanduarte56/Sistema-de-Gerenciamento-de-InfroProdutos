@@ -52,7 +52,7 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img style="width: 100%; height:200px;object-fit:cover;" src="{{url("storage/{$produto->imagem}")}}">
+              <img style="width: 100%; height:200px;object-fit:cover;" src="{{$produto->imagem}}">
               <span class="card-title"></span>
               <a href="{{route('produtos.show',$produto->slug)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">visibility</i></a>
             </div>

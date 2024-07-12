@@ -28,7 +28,9 @@
                 <div style="margin-left: 10px; padding-top:8px;" class="input-field col s12">
                     <select  id="idioma" name="idioma">
                         <option value=""  selected>escolha</option>
-                        <option value="pt-br">PT-BR</option>
+                        @foreach ($idioma_valores as $idioma)
+                        <option value="{{$idioma}}">{{$idioma}}</option>
+                    @endforeach
                     </select>
                     <label style="top:-27px !important;" for="idioma">Idioma</label>
                 </div>
@@ -38,8 +40,9 @@
             <div class="input-field col s12">
                 <select required  id="nicho" name="nicho">
                     <option value="" disabled selected>escolha</option>
-                    <option value="saúde física">Saúde Física</option>
-                    <option value="saúde mental">Saúde Mental</option>
+                    @foreach ($nicho_valores as $nicho)
+                        <option value="{{$nicho}}">{{$nicho}}</option>
+                    @endforeach
                     <option value="outro">Outro</option>
                 </select>
                 <label for="nicho">Nicho</label>
@@ -47,9 +50,9 @@
             <div class="input-field col s12">
                 <select  id="formato_produto" name="formato_produto">
                     <option value="" disabled selected>escolha</option>
-                    <option value="curso digital">Curso Digital</option>
-                    <option value="ebook digital">Ebook Digital</option>
-                    <option value="sowftare">sowftare</option>
+                    @foreach ($formato_valores as $formato)
+                        <option value="{{$formato}}">{{$formato}}</option>
+                    @endforeach
                 </select>
                 <label for="idioma">Formato do produto</label>
             </div>
@@ -57,7 +60,9 @@
             <div class="input-field col s12">
                 <select  id="moeda" name="moeda">
                     <option value="" disabled selected>Escolha</option>
-                    <option value="real">Real</option>
+                    @foreach ($moeda_valores as $moeda)
+                    <option value="{{$moeda}}">{{$moeda}}</option>
+                @endforeach
                 </select>
                 <label for="moeda">moeda</label>
             </div>
@@ -148,6 +153,9 @@ document.getElementById('opcao-afiliados').addEventListener('change', (evt) => {
     }else{
         var SelectsHide = document.getElementById('container-opcoes-afiliados');
         SelectsHide.style.display = 'none';
+        [...document.getElementsByClassName('select_hide')].forEach(element => {
+           element.removeAttribute('required')
+        });
         }});
 
         document.getElementById('carregar-foto').addEventListener('change', (evt) => {

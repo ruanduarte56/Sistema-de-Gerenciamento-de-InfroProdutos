@@ -19,6 +19,7 @@
 <p> #4.2 PHP artisan seed <span style='color:red;'>isso irá gerar alguns dados fakes para tesete no seu mysql</span> </p> 
 #4.3 PHP ARTISAN SERVE <br>
 #4.4 Entrar no servidor pelo navegador <br>
-#4.4.1 vá para a rota de Registro clicando em Registre-se ou pela url index/registro <br>
-#4.5 crie sua conta e após isso será autenticado automaticamente <br>
-#4.6 agora basta simular todo sistema na sua própia máquina. <br>
+#4.4.1 vá para a rota de login clicando em login ou pela url index/login <br>
+#4.5 vá ao banco de dados e veja os emails criados<br>
+#4.6 para finalizar basta logar com email e colocar password na senha <br>
+#4.7 agora você pode simular todo sistema na sua própia máquina. <br>

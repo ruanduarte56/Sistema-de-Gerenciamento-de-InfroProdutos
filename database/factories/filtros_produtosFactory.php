@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\filtros;
 use App\Models\produtos;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class AfliadosFactory extends Factory
+class filtros_produtosFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +19,8 @@ class AfliadosFactory extends Factory
     public function definition(): array
     {
         return [
-            'i_usuario'=>User::pluck('id')->random(),
-            'i_produto'=>produtos::pluck('id')->random(),
+            'filtros_id' => filtros::pluck('id')->random(),
+            'produtos_id' => produtos::pluck('id')->random(),
         ];
     }
 }

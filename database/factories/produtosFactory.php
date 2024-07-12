@@ -24,11 +24,11 @@ class produtosFactory extends Factory
             'nome' => $nome,
             'i_usuario'=>User::pluck('id')->random(),
             'descricao' => $this->faker->paragraph(),
-            'preco' => $this->faker->randomFloat(4),
-            'porcetagem afiliacao' => $this->faker->randomFloat(2,0.3,0.8),
-            'imagem' => $this->faker->imageUrl(400,400),
+            'preco' => $this->faker->randomFloat(2,20,10000),
+            'porcetagem_afiliacao' => $this->faker->randomFloat(2,0.2,0.8),
+            'imagem' => $this->faker->imageUrl(200,200),
             'slug' => str::slug($nome),
-            'pagina de vendas' => str::slug($nome.'/paginadevendas','-'),
+            'pagina_de_vendas' => str::slug($nome.'/paginadevendas','-'),
             //
         ];
     }

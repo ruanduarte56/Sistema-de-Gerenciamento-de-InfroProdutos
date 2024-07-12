@@ -19,6 +19,10 @@ class produtos extends Model
         'imagem',
     ];
 
+    protected $casts = [
+        'status' => 'string'
+    ];
+
     protected $guarded=[];
     public function filtros(){
         return $this->belongsToMany('App\models\filtros');
